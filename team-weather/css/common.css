@@ -9,7 +9,7 @@
 }
 @font-face {
 	font-family: huninn;
-	src: url(../data/jf-openhuninn-2.0.ttf);
+	src: url(../data/jf-openhuninn-2.0.ttf) format('truetype');;
 }
 body{
 	font-family: huninn , sans-serif;
