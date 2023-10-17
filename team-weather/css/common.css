@@ -9,7 +9,7 @@
 }
 @font-face {
 	font-family: huninn;
-	src: url(/team-weather/data/jf-openhuninn-2.0.ttf);
+	src: url(../../team-weather/data/jf-openhuninn-2.0.ttf);
 }
 body{
 	font-family: huninn , sans-serif;
