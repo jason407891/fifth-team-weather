@@ -4,29 +4,44 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>雨量觀測</title>
-	<!-- 建立整體樣式指導：基礎字型、字體、基底色、標題、段落樣式等等 -->
-	<link rel="stylesheet" type="text/css" href="css/common.css" />
-	<!-- 建立雨量觀測部份的樣式 -->
-	<link rel="stylesheet" type="text/css" href="css/raining.css" />
+	<title>天氣地圖</title>	
+	<link rel="stylesheet"  type="text/css" href="css/index/index.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />   	
+	<script src="https://unpkg.com/d3@5.6.0/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.js"></script>
+    <script src="js/index.js" defer></script>
 </head>
 <body>
-	<!-- 美化雨量觀測顯示、資料處理或建立資料分頁功能 -->
-	<h3>雨量觀測</h3>
-	<div id="raining"></div>
-
-	<!--
-		完成各縣市氣象預報功能
-		請使用中央氣象局公開 API 的第一個資料集 (/v1/rest/datastore/F-C0032-001)
-		https://opendata.cwb.gov.tw/dist/opendata-swagger.html?urls.primaryName=openAPI#/
-	-->
-	<h3>各縣市最新氣象預報 ( 文字描述、低溫、高溫 )</h3>
-	<div id="weather"></div>
-	<script>
-		// 以下是我申請的 KEY 請使用無所謂，你也可以自己去中央氣象局網站申請一個
-		// https://opendata.cwb.gov.tw/index
-		const CWB_API_KEY="CWB-25142137-EFE4-4F9E-9B46-D41BF5BD73D5";
-	</script>
-	<script src="js/raining.js"></script>
+	<div class="mapSection">
+		<svg width="500" height="500"></svg>	
+	</div>
+	<div class="textSection">
+		<h1>台灣天氣地圖</h1>
+		<div class="functionSelect">
+			<span>今日天氣</span>
+			<span>每小時天氣</span>
+			<span>設定通知</span>
+			<span>篩選</span>
+		</div>
+		<div class="information">
+			<div class="countyName contentBar">
+				<h2 id="countyName"></h2>			
+			</div>
+			<div class="weather contentBar">
+				<h4 id="weatherCondition"></h4>
+				<h4 id="comfort"></h4>
+			</div>
+			<div class="temperatureAndRaining contentBar">
+				<div class="temperature">
+					<img src="image/temperature-svgrepo-com-white.svg" alt="">
+					<span id="lowestTemperature"></span><span>-</span><span id="highestTemperature"></span><span>°c</span>
+				</div>
+				<div class="raining">
+					<img src="image/rain-alt-svgrepo-com-white.svg" alt="">				
+					<h4 id="raining"></h4><span>%</span>			
+				</div>			
+			</div>
+		</div>	
+	</div>	
 </body>
 </html>
