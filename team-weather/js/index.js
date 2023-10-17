@@ -1,3 +1,4 @@
+//create map
 let svg = d3.select("svg");
 const g = svg.append("g");
 
@@ -13,7 +14,12 @@ d3.json("./data/COUNTY_MOI_1090820_topo.json")
       .append("path")
         .attr("d", pathGenerator)
         .attr("class","county")
-        .attr("id",t => t.properties["COUNTYNAME"])    
+        .attr("id",t => t.properties["COUNTYNAME"])
+    paths.exit()
+      .append("path")
+        .attr("d", pathGenerator)
+        .attr("class","county")
+        .attr("id",t => t.properties["COUNTYNAME"])
   })
   .then(()=>{
       const county = document.querySelectorAll(".county")
