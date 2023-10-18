@@ -18,12 +18,27 @@ body{
     .functionSelect{
         margin-bottom: 50px;
         text-align: right;
-        span{
-            padding: 10px;
-            font-size: 20px;
-            color: var(--text-color-white);
-            background-color: var(--surface-color-darkbrown);
-            border-radius: 10px;
+        label{            
+            input[type=radio]{                
+                position: absolute;
+                opacity: 0;
+            }
+            span{
+                padding: 10px;
+                font-size: 20px;
+                color: var(--text-color-white);
+                background-color: var(--surface-color-darkbrown);
+                border-radius: 10px;                       
+            }
+            input[type=radio] + span{
+                cursor: pointer;
+            }         
+            input[type=radio]:checked + span{
+                color: var(--surface-color-darkbrown);
+                background-color: var(--text-color-white);
+                border: 1px solid var(--surface-color-brown);  
+                box-shadow: -2px 2px var(--surface-color-brown);              
+            }
         }
     }
     .information{

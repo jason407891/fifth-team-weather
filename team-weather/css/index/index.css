@@ -19,12 +19,25 @@ body {
   margin-bottom: 50px;
   text-align: right;
 }
-.textSection .functionSelect span {
+.textSection .functionSelect label input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+.textSection .functionSelect label span {
   padding: 10px;
   font-size: 20px;
   color: var(--text-color-white);
   background-color: var(--surface-color-darkbrown);
   border-radius: 10px;
+}
+.textSection .functionSelect label input[type=radio] + span {
+  cursor: pointer;
+}
+.textSection .functionSelect label input[type=radio]:checked + span {
+  color: var(--surface-color-darkbrown);
+  background-color: var(--text-color-white);
+  border: 1px solid var(--surface-color-brown);
+  box-shadow: -2px 2px var(--surface-color-brown);
 }
 .textSection .information {
   width: 500px;
