@@ -10,7 +10,7 @@ JACKY: 前端串接Geolocation API獲取使用者經緯度 / 透過後端將經�
 
 JASON: 設定remind功能，EC2部署
 
-鴻志:
+鴻志: 串接weather api及discord api並自動發送天氣預報到DC group
 
 
 
