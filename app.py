@@ -61,7 +61,10 @@ def sendmsg(name,content):
     webhook_url="https://discordapp.com/api/webhooks/1163495849842704565/I7SJdtkonFMMvuXFs3GQTshXtwCB47N3juFGLNtBf1bLAevRIXukZdH82j31jfhRbCxQ"
     data={"content":"Hi "+name+",\n"+content}
     headers = {'Content-Type': 'application/json'}
-    requests.post(webhook_url, data=json.dumps(data), headers=headers)
+    requests.post(webhook_url, data=json.dumps(data), headers=headers)        
+    #time.sleep(28800)
+    time.sleep(60)
+
 
 #control=0 =>will not send msg to discord
 control=0
