@@ -71,7 +71,6 @@ control=0
 
 def schedule_sendmsg(name,content):
     global control
-    schedule.clear()
     while control==1:
         #schedule.every().monday.at("09:00").do(sendmsg,name,content[0])#早上發
         #schedule.every().tuesday.at("09:00").do(sendmsg,name,content[0])
@@ -83,7 +82,7 @@ def schedule_sendmsg(name,content):
         #schedule.every().wednesday.at("18:00").do(sendmsg,name,content[1])
         #schedule.every().thursday.at("18:00").do(sendmsg,name,content[1])
         #schedule.every().friday.at("18:00").do(sendmsg,name,content[1])
-        schedule.every().friday.at("19:00").do(sendmsg,name,content[1])
+        schedule.every().friday.at("19:25").do(sendmsg,name,content[1])
         schedule.run_pending()
         time.sleep(60)
 
